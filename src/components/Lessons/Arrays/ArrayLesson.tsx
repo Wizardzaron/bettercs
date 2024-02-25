@@ -5,6 +5,7 @@ import { useState, FC, useEffect } from "react";
 import { RenderArray } from "@/components/Lessons/Arrays/RenderArray";
 import { DndContext } from "@dnd-kit/core";
 import type { ArrayProps } from "@/types/ArrayProps";
+import { CodeEditor } from "../CodeEditor";
 
 export const ArrayLesson: FC<ArrayProps> = ({ array, question, answer }) => {
 	const [items, setItems] = useState(array);
@@ -16,7 +17,7 @@ export const ArrayLesson: FC<ArrayProps> = ({ array, question, answer }) => {
 	}, [items]);
 
 	// If wanted to simply display an interactable array, without a question or answer
-	if (!question && !answer) {
+	if (!question || !answer) {
 		return (
 			<DndContext onDragEnd={handleDragEnd}>
 				<RenderArray array={items} />
@@ -26,12 +27,19 @@ export const ArrayLesson: FC<ArrayProps> = ({ array, question, answer }) => {
 	}
 
 	return (
-		<DndContext onDragEnd={handleDragEnd}>
-			<div>Question: {question}</div>
-			<RenderArray array={items} />
-			<div>Current Array: {itemsStr}</div>
-			{isCorrect && <div>Correct!</div>}
-		</DndContext>
+		<div className="flex">
+			<DndContext onDragEnd={handleDragEnd}>
+				<div className="flex flex-col mr-4">
+					<div className="pr-24">Question: {question}</div>
+					<RenderArray array={items} />
+					<div>Current Array: {itemsStr}</div>
+					{isCorrect && <div>Correct!</div>}
+				</div>
+			</DndContext>
+			<div className="flex-grow">
+				<CodeEditor />
+			</div>
+		</div>
 	);
 
 	function handleDragEnd(event: any) {

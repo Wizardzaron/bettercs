@@ -4,14 +4,18 @@ import { useEffect, FC, ReactNode } from "react";
 import { Draggable } from "@/components/DND/Draggable";
 import { Droppable } from "@/components/DND/Droppable";
 import type { ArrayOnlyProps } from "@/types/ArrayOnlyProps";
+import { Monitor } from "@/components/DND/Monitor";
 
 export const RenderArray: FC<ArrayOnlyProps> = ({
 	array,
 }: ArrayOnlyProps): ReactNode => {
 	// Just for testing.
-	useEffect(() => {
-		console.log("Array: ", array);
-	}, [array]);
+	// useEffect(() => {
+	// 	console.log("Array: ", array);
+	// }, [array]);
+
+	// Activate the monitor for parent "Dndcontext" provider.
+	Monitor();
 
 	return (
 		<div className="container">
