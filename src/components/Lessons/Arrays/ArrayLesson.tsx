@@ -15,6 +15,16 @@ export const ArrayLesson: FC<ArrayProps> = ({ array, question, answer }) => {
 		setIsCorrect(JSON.stringify(items) === JSON.stringify(answer));
 	}, [items]);
 
+	// If wanted to simply display an interactable array, without a question or answer
+	if (!question && !answer) {
+		return (
+			<DndContext onDragEnd={handleDragEnd}>
+				<RenderArray array={items} />
+				<div>Current Array: {itemsStr}</div>
+			</DndContext>
+		);
+	}
+
 	return (
 		<DndContext onDragEnd={handleDragEnd}>
 			<div>Question: {question}</div>

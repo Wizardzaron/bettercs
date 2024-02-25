@@ -3,3 +3,7 @@ export interface ArrayProps {
 	question?: string;
 	answer?: number[];
 }
+
+export interface ArrayOnlyProps {
+	array: number[];
+}

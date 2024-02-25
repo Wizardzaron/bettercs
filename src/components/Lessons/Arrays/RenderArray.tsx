@@ -3,21 +3,18 @@
 import { useEffect, FC, ReactNode } from "react";
 import { Draggable } from "@/components/DND/Draggable";
 import { Droppable } from "@/components/DND/Droppable";
+import type { ArrayOnlyProps } from "@/types/ArrayOnlyProps";
 
-interface ArrayProps {
-	array: number[];
-}
-
-export const RenderArray: FC<ArrayProps> = ({
+export const RenderArray: FC<ArrayOnlyProps> = ({
 	array,
-}: ArrayProps): ReactNode => {
+}: ArrayOnlyProps): ReactNode => {
 	// Just for testing.
 	useEffect(() => {
 		console.log("Array: ", array);
 	}, [array]);
 
 	return (
-		<>
+		<div className="container">
 			{array.map((elem, idx) => (
 				<Droppable key={idx} id={idx.toString()}>
 					<Draggable id={idx.toString()}>
@@ -27,6 +24,6 @@ export const RenderArray: FC<ArrayProps> = ({
 					</Draggable>
 				</Droppable>
 			))}
-		</>
+		</div>
 	);
 };
