@@ -31,3 +31,18 @@ body {
     text-wrap: balance;
   }
 }
+
+.header-neon-blue {
+  @apply text-3xl font-bold;
+  background: -webkit-linear-gradient(#00d1ff, #7e5bef); /* Gradient from neon blue to purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00d1ff, 0 0 2px #7e5bef; /* Adjusted glow effect */
+}
+
+
+.body-neon-blue {
+  @apply text-lg text-blue-400;
+  color: #00d1ff; /* Adjusting the neon effect for body text */
+  text-shadow: 0 0 4px #00d1ff, 0 0 10px #00d1ff;
+}
