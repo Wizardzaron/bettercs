@@ -10,7 +10,7 @@ export default function Array() {
 	const array2 = [1, 2, 3, 4, 5];
 
 	return (
-		<div className="container">
+		<div className="container body-neon-blue">
 			<h1>Array</h1>
 			<ArrayLessonText>
 				An array is simply a collection of things. These things are
