@@ -14,8 +14,9 @@ export default function Array() {
 			<ArrayLesson
 				array={array}
 				question="Given an array of integers, move all even numbers to the beginning of the array while maintaining their relative order, and all odd numbers to the end of the array."
+				answer={[2, 4, 1, 3, 5]}
 			/>
-			<ArrayLesson array={array2} />
+			{/* <ArrayLesson array={array2} /> */}
 		</div>
 	);
 }

@@ -1,20 +1,26 @@
 // Resource used for designing layout:
 // https://docs.dndkit.com/introduction/getting-started
 
-import { useState, FC } from "react";
+import { useState, FC, useEffect } from "react";
 import { RenderArray } from "@/components/Lessons/Arrays/RenderArray";
 import { DndContext } from "@dnd-kit/core";
 import type { ArrayProps } from "@/types/ArrayProps";
 
-export const ArrayLesson: FC<ArrayProps> = ({ array, question }) => {
+export const ArrayLesson: FC<ArrayProps> = ({ array, question, answer }) => {
 	const [items, setItems] = useState(array);
+	const [isCorrect, setIsCorrect] = useState(false);
 	const itemsStr = items.map((item) => item.toString()).join(", ");
+
+	useEffect(() => {
+		setIsCorrect(JSON.stringify(items) === JSON.stringify(answer));
+	}, [items]);
 
 	return (
 		<DndContext onDragEnd={handleDragEnd}>
 			<div>Question: {question}</div>
 			<RenderArray array={items} />
 			<div>Current Array: {itemsStr}</div>
+			{isCorrect && <div>Correct!</div>}
 		</DndContext>
 	);
 
