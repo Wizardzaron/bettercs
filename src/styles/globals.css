@@ -18,6 +18,87 @@
 
 body {
   height: 100vh;
+  background: linear-gradient(to bottom, #26222A, #2a2345); /* Dark gray to purple */
+  background-repeat: no-repeat;
+}
+
+
+.image-title{
+
+  display:block;
+  margin-top:30px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.button {
+  padding: 2px;
+  font-size: 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.neon-button{
+  color:green;
+  text-align: center;
+  margin-top: 50px;
+  border: 3px solid green;
+  padding:15px,35px;
+  font-size: 30px;
+  margin-left: 700px;
+
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 42px green,
+  0 0 82px green;
+
+  box-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 42px green,
+  0 0 82px green;
+
+}
+
+.descript-text{
+
+  text-align: center;
+  margin-top:30px;
+  color:white;
+
+}
+
+.spacingInsideSticky .stickySpaceLink {
+  color: white;
+  font-size: 30px;
+  margin-left: 640px;
+}
+
+.spacingInsideSticky .stickySpaceLink:hover {
+  color: violet;
+}
+
+
+.spacingInsideSticky .stickySpaceLink + .stickySpaceLink{
+  margin-left: 80px;
+}
+
+.text-1{
+
+  color: violet;
+
+}
+
+.text-2{
+
+  color: yellow;
+
+  height: 100vh;
 
   background: #26222A;
   background-repeat: no-repeat;
@@ -96,5 +177,18 @@ body {
   }
 }
 
+.header-neon-blue {
+  @apply text-3xl font-bold;
+  text-align: center;
+  background: -webkit-linear-gradient(#00d1ff, #7e5bef); /* Gradient from neon blue to purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00d1ff, 0 0 2px #7e5bef; /* Adjusted glow effect */
+}
 
 
+.body-neon-blue {
+  @apply text-lg text-blue-400;
+  color: #00d1ff; /* Adjusting the neon effect for body text */
+  text-shadow: 0 0 4px #00d1ff, 0 0 10px #00d1ff;
+}
