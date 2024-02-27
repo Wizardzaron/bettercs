@@ -1,6 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About
+
+A gamified web application designed to help CS students learn concepts through highly interactive activities for typical weed-out classes such as Data Structures and Computer Organization. This includes useful features such as a daily streak tracker, lesson plans, and more! We believe learning through play is the best way to effectively learn something new.
+
+Created by the team, [**The Travelling Salesmen**](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
+
+### Team Members
+
+1. [Leon Do](https://github.com/yushasama)
+2. [Nicholas Goulart](https://github.com/NickPrivate)
+3. [Ryan Haddadi](https://github.com/Wizardzaron)
+4. [John Carlo Manuel](https://github.com/johncmanuel)
+ 
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
